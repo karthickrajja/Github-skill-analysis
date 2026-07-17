@@ -9,3 +9,14 @@ def get_report(basic_info , top_langagues, analyz):
     print(f"====================================\nRepository Statistics\n------------------------------------")
     for i , j in analyz.items():
         print(i,j)
+
+
+
+def identify_skills(repo_data):
+    words = []
+    for i in repo_data:
+        words.append(i["name"])
+        words.append(i['description'])
+        for j in i["topics"]:
+            words.append(j)
+    return words

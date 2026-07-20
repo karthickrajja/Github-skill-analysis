@@ -6,6 +6,7 @@ from analyzer import analysis_repo
 from analyzer import top_langague
 from reports import get_report
 from reports import identify_skills
+from reports import check_skills
 import pandas as pd
 
 username = "karthickrajja"
@@ -18,4 +19,5 @@ basic_info = get_basic_info(username)
 top_langagues = top_langague(df)
 analyz = analysis_repo(df)
 
-print(identify_skills(repo_data))
+print((identify_skills(repo_data)))
+

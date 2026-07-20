@@ -19,4 +19,22 @@ def identify_skills(repo_data):
         words.append(i['description'])
         for j in i["topics"]:
             words.append(j)
-    return words
+    word_lower = []
+    for i in words:
+        if i != None:
+            word_lower.append(i.lower())
+    return word_lower
+
+
+
+def check_skills(words):
+    skills = {"Python": ["python"],"SQL": ["sql", "mysql", "postgres"],"Pandas": ["pandas"],"NumPy": ["numpy"],"FastAPI": ["fastapi"],"Docker": ["docker"],"Git": ["git"]}
+    status = {}
+    for i , j in skills.items():
+        for skill in j:
+            if skill in words:
+                status[i] =  "Yes"
+                break
+        else :
+            status[i] =  "No"
+    return status

@@ -28,13 +28,17 @@ def identify_skills(repo_data):
 
 
 def check_skills(words):
-    skills = {"Python": ["python"],"SQL": ["sql", "mysql", "postgres"],"Pandas": ["pandas"],"NumPy": ["numpy"],"FastAPI": ["fastapi"],"Docker": ["docker"],"Git": ["git"]}
-    status = {}
-    for i , j in skills.items():
-        for skill in j:
-            if skill in words:
-                status[i] =  "Yes"
-                break
-        else :
-            status[i] =  "No"
-    return status
+   status = {}
+   skills = {"Python": ["python"],"SQL": ["sql", "mysql", "postgres"],"Pandas": ["pandas"],"NumPy": ["numpy"],"FastAPI": ["fastapi"],"Docker": ["docker"],"Git": ["git"]}
+   for i , j in skills.items():
+      matched = False
+      for k in j:
+         for word in words:
+            if k in word:
+               matched = True
+               status[i] = "Yes"
+               break
+      else:
+         if matched == False:
+            status[i] = "No"
+   return status

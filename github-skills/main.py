@@ -19,5 +19,5 @@ basic_info = get_basic_info(username)
 top_langagues = top_langague(df)
 analyz = analysis_repo(df)
 
-print((identify_skills(repo_data)))
+print(check_skills(identify_skills(repo_data)))
 
